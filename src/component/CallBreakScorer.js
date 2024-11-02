@@ -14,6 +14,9 @@ const CallBreakScorer = () => {
   ]);
 
   const handleNameEdit = (playerIndex, newName) => {
+    if (!isNaN(newName) || newName.trim() === "") {
+      return;
+    }
     const updatedPlayers = [...players];
     updatedPlayers[playerIndex].name = newName;
     setPlayers(updatedPlayers);
