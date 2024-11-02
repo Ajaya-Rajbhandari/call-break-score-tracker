@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Trophy, RotateCcw } from "lucide-react";
+import { FaTrophy, FaRedo } from "react-icons/fa";
 import styles from "../styles/CallBreakScorer.module.css";
 
 const CallBreakScorer = () => {
@@ -178,14 +178,14 @@ const CallBreakScorer = () => {
         ) : (
           <div>
             <div className={styles.winnerCard}>
-              <Trophy className={styles.winnerIcon} size={24} />
+              <FaTrophy className={styles.winnerIcon} size={24} />
               <span>
                 <strong>Winner: {getWinner().name}</strong>
               </span>
               <span>with {getWinner().total.toFixed(1)} points</span>
             </div>
             <button onClick={startNewGame} className={styles.button}>
-              <RotateCcw size={16} />
+              <FaRedo size={16} />
               Start New Game
             </button>
           </div>
