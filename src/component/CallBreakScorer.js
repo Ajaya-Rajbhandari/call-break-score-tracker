@@ -30,6 +30,35 @@ const CallBreakScorer = () => {
     updatedPlayers[playerIndex].rounds[currentRound - 1].call =
       parseInt(call) || 0;
     setPlayers(updatedPlayers);
+    autoFillLastPlayerCall();
+  };
+
+  const autoFillLastPlayerCall = () => {
+    const currentRoundData = players.map((p) => p.rounds[currentRound - 1]);
+    const totalCalls = currentRoundData.reduce(
+      (sum, round) => sum + (round?.call || 0),
+      0
+    );
+    const remainingCalls = 13 - totalCalls;
+
+    if (remainingCalls > 0) {
+      const playerWithoutCallIndex = currentRoundData.findIndex(
+        (round) => round?.call === undefined
+      );
+
+      if (playerWithoutCallIndex !== -1) {
+        const updatedPlayers = [...players];
+
+        // Ensure the rounds array is initialized for the player without a call
+        if (!updatedPlayers[playerWithoutCallIndex].rounds[currentRound - 1]) {
+          updatedPlayers[playerWithoutCallIndex].rounds[currentRound - 1] = {};
+        }
+
+        updatedPlayers[playerWithoutCallIndex].rounds[currentRound - 1].call =
+          remainingCalls;
+        setPlayers(updatedPlayers);
+      }
+    }
   };
 
   const handleActual = (playerIndex, actual) => {
@@ -53,11 +82,13 @@ const CallBreakScorer = () => {
       playerIndex
     ].rounds.reduce((sum, round) => sum + (round.points || 0), 0);
     setPlayers(updatedPlayers);
+    autoFillLastPlayerCall();
   };
 
   const nextRound = () => {
     if (currentRound < 5) {
       setCurrentRound(currentRound + 1);
+      autoFillLastPlayerCall();
     }
   };
 
