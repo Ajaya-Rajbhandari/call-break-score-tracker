@@ -1,0 +1,133 @@
+.container{
+    width:100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.card{
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+    padding: 20px;
+}
+.cardHeader{
+    margin-bottom: 20px;
+}
+
+.cardTitle{
+    font-size: 24px;
+    margin: 0;
+    color: #333;
+}
+
+.roundInfo{
+    font-size: 18px;
+    color: #666;
+    margin-top: 8px;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.gridHeader{
+    font-weight: bold;
+    color: #444;
+}
+
+.input{
+    width: 80px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.input:focus{
+    outline: none;
+    border-color: #666;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+.button{
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.button:hover{
+    background-color: #1d4ed8;
+}
+
+.button:disabled{
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.winnerCard{
+    background-color: #ecfdf5;
+    padding: 16px;
+    border-radius: 8px;
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.winnderIcon{
+    color: #fbbf24;
+}
+
+.alert{
+    background-color: #fee2e2;
+    color: #991b1b;
+    padding: 12px;
+    border-radius: 4px;
+    margin-top: 16px;
+}
+
+.nameInput{
+    width: 100%;
+    max-width: 300px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.playerSetup{
+    display: flex;
+    flex-direction: column;
+    grid-area: 16px;
+}
+
+.previousRounds{
+    margin-top: 24px;
+}
+
+.roundRow{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: 16px;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cell{
+    display: flex;
+    align-items: center;
+}
