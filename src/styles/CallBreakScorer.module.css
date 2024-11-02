@@ -1,8 +1,14 @@
 .container{
     width:100%;
-    max-width: 1000px;
+    max-width: 500px;
     margin: 0 auto;
     padding: 20px;
+}
+.iconCall{
+    display: block;
+    
+    float: right;
+    position: sticky;
 }
 
 .card{
@@ -11,9 +17,12 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 24px;
     padding: 20px;
+    position: relative;
 }
 .cardHeader{
     margin-bottom: 20px;
+    display: inline;
+
 }
 
 .cardTitle{
@@ -24,6 +33,9 @@
 
 .roundInfo{
     font-size: 18px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
     color: #666;
     margin-top: 8px;
 }
@@ -63,9 +75,9 @@
     cursor: pointer;
     font-size: 14px;
     display: flex;
-    align-items: center;
     gap: 8px;
     margin-top: 16px;
+    align-self: center;
 }
 
 .button:hover{
@@ -130,4 +142,33 @@
 .cell{
     display: flex;
     align-items: center;
+}
+
+.title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+    .title {
+        font-size: 1.5rem;
+    }
+}
+
+.footer {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 0.8rem;
+    color: #555;
+}
+
+.footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
 }

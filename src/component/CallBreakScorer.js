@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaTrophy, FaRedo } from "react-icons/fa";
 import styles from "../styles/CallBreakScorer.module.css";
+import CallBreaker from "../img/CallBreakScoreTraacker.png";
 
 const CallBreakScorer = () => {
   const [currentRound, setCurrentRound] = useState(1);
@@ -122,6 +123,13 @@ const CallBreakScorer = () => {
       <div className={styles.container}>
         <div className={styles.card}>
           <div className={styles.cardHeader}>
+            <img
+              src={CallBreaker}
+              alt="callBreaker"
+              width="100px"
+              height="100px"
+              className={styles.iconCall}
+            />
             <h2 className={styles.cardTitle}>Enter Player Names</h2>
           </div>
           <div className={styles.playerSetup}>
@@ -149,9 +157,20 @@ const CallBreakScorer = () => {
 
   return (
     <div className={styles.container}>
+      <h1 className={styles.title}>
+        Call Break Score Tracker
+        <img
+          src={CallBreaker}
+          alt="callBreaker"
+          width="50px"
+          height="50px"
+          className={styles.iconCall}
+        />
+      </h1>
       <div className={styles.card}>
         <div className={styles.cardHeader}>
           <h2 className={styles.cardTitle}>Call Break Score Tracker</h2>
+
           <div className={styles.roundInfo}>Round {currentRound} of 5</div>
         </div>
 
@@ -221,6 +240,21 @@ const CallBreakScorer = () => {
             </button>
           </div>
         )}
+
+        {/* Footer Section */}
+        <div className={styles.footer}>
+          <p>
+            AjayaRajbhandari
+            <a
+              href="https://github.com/Ajaya-Rajbhandari"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <br />
+              GitHub
+            </a>
+          </p>
+        </div>
       </div>
 
       {currentRound > 1 && (
