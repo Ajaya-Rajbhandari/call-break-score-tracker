@@ -3,6 +3,66 @@ import { FaTrophy, FaRedo } from "react-icons/fa";
 import styles from "../styles/CallBreakScorer.module.css";
 import CallBreaker from "../img/CallBreakScoreTraacker.png";
 
+// const PlayerName = () => {
+//   return (
+//     <>
+//       return (
+//       <div className={styles.container}>
+//         <div className={styles.card}>
+//           <div className={styles.cardHeader}>
+//             <img
+//               src={CallBreaker}
+//               alt="callBreaker"
+//               width="100px"
+//               height="100px"
+//               className={styles.iconCall}
+//             />
+//             <h2 className={styles.cardTitle}>Card Break Score Tracker</h2>
+//           </div>
+//           <div className={styles.playerSetup}>
+//             {players.map((player, index) => (
+//               <input
+//                 key={index}
+//                 value={player.name}
+//                 onChange={(e) => handleNameEdit(index, e.target.value)}
+//                 placeholder={`Player ${index + 1}`}
+//                 className={styles.nameInput}
+//               />
+//             ))}
+//             <button
+//               onClick={startGame}
+//               className={styles.button}
+//               disabled={players.some((p) => !p.name.trim())}
+//             >
+//               Start Game
+//             </button>
+//             <Footer />
+//           </div>
+//         </div>
+//       </div>
+//       );
+//     </>
+//   );
+// };
+const Footer = () => {
+  return (
+    <>
+      <div className={styles.footer}>
+        <p>
+          AjayaRajbhandari
+          <a
+            href="https://github.com/Ajaya-Rajbhandari"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <br />
+            GitHub
+          </a>
+        </p>
+      </div>
+    </>
+  );
+};
 const CallBreakScorer = () => {
   const [currentRound, setCurrentRound] = useState(1);
   const [editingNames, setEditingNames] = useState(true);
@@ -121,6 +181,7 @@ const CallBreakScorer = () => {
             >
               Start Game
             </button>
+            <Footer />
           </div>
         </div>
       </div>
@@ -214,7 +275,7 @@ const CallBreakScorer = () => {
         )}
 
         {/* Footer Section */}
-        <div className={styles.footer}>
+        {/* <div className={styles.footer}>
           <p>
             AjayaRajbhandari
             <a
@@ -227,33 +288,34 @@ const CallBreakScorer = () => {
             </a>
           </p>
         </div>
-      </div>
-
-      {currentRound > 1 && (
-        <div className={styles.card}>
-          <div className={styles.cardHeader}>
-            <h3 className={styles.cardTitle}>Previous Rounds</h3>
-          </div>
-          <div className={styles.previousRounds}>
-            <div className={styles.roundRow}>
-              <div>Round</div>
-              {players.map((player) => (
-                <div key={player.name}>{player.name}</div>
-              ))}
+      </div> */}
+        <Footer />
+        {currentRound > 1 && (
+          <div className={styles.card}>
+            <div className={styles.cardHeader}>
+              <h3 className={styles.cardTitle}>Previous Rounds</h3>
             </div>
-            {Array.from({ length: currentRound - 1 }).map((_, index) => (
-              <div key={index} className={styles.roundRow}>
-                <div>{index + 1}</div>
+            <div className={styles.previousRounds}>
+              <div className={styles.roundRow}>
+                <div>Round</div>
                 {players.map((player) => (
-                  <div key={player.name}>
-                    {player.rounds[index]?.points?.toFixed(1) || 0}
-                  </div>
+                  <div key={player.name}>{player.name}</div>
                 ))}
               </div>
-            ))}
+              {Array.from({ length: currentRound - 1 }).map((_, index) => (
+                <div key={index} className={styles.roundRow}>
+                  <div>{index + 1}</div>
+                  {players.map((player) => (
+                    <div key={player.name}>
+                      {player.rounds[index]?.points?.toFixed(1) || 0}
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };
