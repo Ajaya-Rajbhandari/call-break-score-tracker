@@ -6,7 +6,6 @@
 }
 .iconCall{
     display: block;
-    
     float: right;
     position: sticky;
 }
@@ -37,7 +36,7 @@
     display: flex;
     justify-content: center;
     color: #666;
-    margin-top: 8px;
+    padding: 10px;
 }
 
 .grid{

@@ -130,7 +130,7 @@ const CallBreakScorer = () => {
               height="100px"
               className={styles.iconCall}
             />
-            <h2 className={styles.cardTitle}>Enter Player Names</h2>
+            <h2 className={styles.cardTitle}>Card Break Score Tracker</h2>
           </div>
           <div className={styles.playerSetup}>
             {players.map((player, index) => (
@@ -169,8 +169,6 @@ const CallBreakScorer = () => {
       </h1>
       <div className={styles.card}>
         <div className={styles.cardHeader}>
-          <h2 className={styles.cardTitle}>Call Break Score Tracker</h2>
-
           <div className={styles.roundInfo}>Round {currentRound} of 5</div>
         </div>
 
