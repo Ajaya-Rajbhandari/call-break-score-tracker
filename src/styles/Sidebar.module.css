@@ -1,0 +1,43 @@
+/* src/styles/Sidebar.module.css */
+.sidebar {
+    position: fixed; /* Fix the sidebar to the left */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    width: 200px; /* Width of the sidebar */
+    height: 100%; /* Full height */
+    background-color: rgba(244, 244, 244, 0.8); /* Semi-transparent background */
+    transition: width 0.3s; /* Smooth transition */
+    overflow: hidden; /* Hide overflow when collapsed */
+    z-index: 1000; /* Ensure it is above other content */
+}
+
+.collapsed {
+    width: 50px; /* Width when collapsed */
+}
+
+.toggleButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.nav {
+    padding: 10px;
+}
+
+.nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav li {
+    margin: 10px 0;
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+}
+
+.nav li svg {
+    margin-right: 10px; /* Space between icon and text */
+}

@@ -1,0 +1,32 @@
+/* src/styles/NameSetupPage.module.css */
+.card {
+    background-color: #f9f9f9; /* Light background for cards */
+    border: 1px solid #ccc; /* Add a border to the card */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px;
+    margin: 20px;
+}
+
+.headerContainer {
+    position: relative; /* Position relative for absolute positioning of children */
+    text-align: center; /* Center the text */
+    margin-bottom: 20px; /* Space below the header */
+}
+
+.headerImage {
+    width: 50%;
+    max-width: 100%; /* Ensure the image does not exceed the card width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners */
+    position: relative; /* Position relative for text overlay */
+    z-index: 1; /* Ensure the image is behind the title */
+}
+
+.titleFirstPage {
+    font-size: 2rem; /* Larger font size */
+    color: #ffffff; /* White text for contrast */
+    /* position:?? absolute; Position absolute to overlay on the image */
+    margin: 0; /* Remove default margin */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add shadow for better readability */
+}

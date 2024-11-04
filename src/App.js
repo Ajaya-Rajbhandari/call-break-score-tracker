@@ -1,12 +1,20 @@
-import "./App.css";
-import CallBreakScorer from "./component/CallBreakScorer";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import MainLayout from "./component/MainLayout";
+import NameSetupPage from "./component/NameSetupPage";
+import GamePage from "./component/GamePage";
 
-function App() {
+const App = () => {
   return (
-    <div style={{ backgroundColor: "#f5f5f5", minHeight: "100vh" }}>
-      <CallBreakScorer />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<NameSetupPage />} /> {/* Default route */}
+          <Route path="game" element={<GamePage />} /> {/* Game page */}
+        </Route>
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;

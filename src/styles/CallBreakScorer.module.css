@@ -4,17 +4,14 @@
     margin: 0 auto;
     padding: 20px;
 }
-.iconCall{
-    display: block;
-    float: right;
-    position: sticky;
-}
 
 .card{
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     position: relative;
 }
@@ -66,21 +63,22 @@
 }
 
 .button{
-    background-color: #2563eb;
+    background-color: #4caf50;
     color: white;
     border: none;
     padding: 10px 20px;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
     display: flex;
     gap: 8px;
     margin-top: 16px;
     align-self: center;
+    transition: background-color 0.3s;
 }
 
 .button:hover{
-    background-color: #1d4ed8;
+    background-color: #45a049;
 }
 
 .button:disabled{
@@ -89,13 +87,10 @@
 }
 
 .winnerCard{
-    background-color: #ecfdf5;
-    padding: 16px;
-    border-radius: 8px;
-    margin-top: 24px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    background-color: #ffeb3b;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
 }
 
 .winnderIcon{
@@ -113,17 +108,17 @@
 .nameInput{
     width: 100%;
     max-width: 300px;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-bottom: 12px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #4a90e2;
+    border-radius: 5px;
     font-size: 14px;
 }
 
 .playerSetup{
     display: flex;
     flex-direction: column;
-    grid-area: 16px;
+    align-items: center;
 }
 
 .previousRounds{
@@ -148,7 +143,13 @@
     text-align: center;
     margin-bottom: 20px;
 }
-
+.titleFirstPage{
+    display: flex;
+    font-size: 2rem;
+    text-align: center;
+    color: #4a90e2;
+    font-weight: bold;
+}
 @media (max-width: 600px) {
     .title {
         font-size: 1.5rem;
@@ -171,4 +172,57 @@
 
 .footer a:hover {
     text-decoration: underline;
+}
+
+.scoreBoard {
+    margin-top: 20px;
+}
+
+.playerRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #e3f2fd;
+    border-radius: 5px;
+}
+
+.headerImage {
+    width: 50%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.headerContainer {
+    position: relative; /* Position relative for absolute positioning of children */
+    text-align: center; /* Center the text */
+    margin-bottom: 20px; /* Space below the header */
+}
+
+.headerImage {
+    width: 20%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners */
+    position: relative; /* Position relative for text overlay */
+    z-index: 1; /* Ensure the image is behind the title */
+}
+
+.titleFirstPage {
+    font-size: 2rem; /* Larger font size */
+    color: #f5f5f5; /* White text for contrast */
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap-reverse;
+    margin: 0; /* Remove default margin */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add shadow for better readability */
+}
+
+/* Add your styles here */
+.nameSetupContainer {
+    /* Example styles */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
 }

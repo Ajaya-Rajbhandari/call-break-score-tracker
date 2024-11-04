@@ -2,9 +2,9 @@ const CACHE_NAME = "call-break-scorer-cache-v1";
 const urlsToCache = [
   "/",
   "/index.html",
-  "/static/js/bundle.js", // Adjust according to your build output
-  "/static/css/main.css", // Adjust according to your build output
-  // Add other assets you want to cache
+  "/static/media/CallBreakScoreTraacker.b287136be0b28bd88a77.png", // Add other assets you want to cache
+  "/static/css/main.df746f51.css", // Add other assets you want to cache
+  "/static/js/main.eed8c69a.js", // Add other assets you want to cache
 ];
 
 self.addEventListener("install", (event) => {

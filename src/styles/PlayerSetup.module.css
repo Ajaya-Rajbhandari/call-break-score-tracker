@@ -1,0 +1,31 @@
+/* src/styles/PlayerSetup.module.css */
+.playerSetupContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    border-radius: 20px;
+}
+
+.playerInput {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    width: 50%; /* Adjust width as needed */
+}
+
+.startButton {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.startButton:hover {
+    background-color: #45a049; /* Darker green on hover */
+}

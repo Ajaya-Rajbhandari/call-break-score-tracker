@@ -1,0 +1,18 @@
+/* src/styles/GamePage.css */
+.container {
+    padding: 20px;
+}
+
+.title {
+    font-size: 2rem;
+    color: #4a90e2; /* Bright blue color */
+    text-align: center;
+}
+
+.card {
+    background-color: #f9f9f9; /* Light background for cards */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px;
+    margin: 20px;
+}
