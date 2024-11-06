@@ -15,7 +15,7 @@
 }
 
 .headerImage {
-    width: 50%;
+    width: 30%;
     max-width: 100%; /* Ensure the image does not exceed the card width */
     height: auto; /* Maintain aspect ratio */
     border-radius: 10px; /* Rounded corners */
@@ -25,7 +25,7 @@
 
 .titleFirstPage {
     font-size: 2rem; /* Larger font size */
-    color: #ffffff; /* White text for contrast */
+    color: #ec91c6d2; /* White text for contrast */
     /* position:?? absolute; Position absolute to overlay on the image */
     margin: 0; /* Remove default margin */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add shadow for better readability */

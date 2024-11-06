@@ -6,7 +6,6 @@ import { faUserPlus } from "@fortawesome/free-solid-svg-icons"; // Import an ico
 import styles from "../styles/NameSetupPage.module.css"; // Import styles
 import CallBreakerImage from "../img/CallBreakScoreTraacker.png";
 // import Sidebar from "./Sidebar";
-import MainLayout from "./MainLayout";
 const NameSetupPage = () => {
   const [players, setPlayers] = useState([
     { name: "Player 1", rounds: [], total: 0 },
@@ -27,9 +26,6 @@ const NameSetupPage = () => {
   }, []); // Empty dependency array means this runs once on mount
 
   const handleNameEdit = (playerIndex, newName) => {
-    if (!isNaN(newName) || newName.trim() === "") {
-      return;
-    }
     const updatedPlayers = [...players];
     updatedPlayers[playerIndex].name = newName;
     setPlayers(updatedPlayers);
@@ -41,7 +37,6 @@ const NameSetupPage = () => {
 
   return (
     <div className={styles.card}>
-      {/* <MainLayout /> */}
       <div className={styles.headerContainer}>
         <img
           src={CallBreakerImage}

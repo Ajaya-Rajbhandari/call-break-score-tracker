@@ -1,5 +1,4 @@
 import React from "react";
-
 const PreviousRounds = ({ players, currentRound, styles }) => {
   return (
     <div className={styles.card}>

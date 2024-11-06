@@ -1,19 +1,11 @@
-.container{
-    width:100%;
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 20px;
-}
 
 .card{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    background: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9; /* Light background for cards */
+    border: 1px solid #ccc; /* Add a border to the card */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     padding: 20px;
-    position: relative;
+    margin: 20px;
 }
 .cardHeader{
     margin-bottom: 20px;
@@ -49,7 +41,7 @@
 }
 
 .input{
-    width: 80px;
+    width: 30px;
     padding: 8px;
     border: 1px solid #ddd;
     border-radius: 4px;

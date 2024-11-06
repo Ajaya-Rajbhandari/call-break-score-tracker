@@ -3,12 +3,15 @@
     position: fixed; /* Fix the sidebar to the left */
     top: 0; /* Align to the top */
     left: 0; /* Align to the left */
-    width: 200px; /* Width of the sidebar */
+    width: 130px; /* Set width for larger screens */
     height: 100%; /* Full height */
-    background-color: rgba(244, 244, 244, 0.8); /* Semi-transparent background */
-    transition: width 0.3s; /* Smooth transition */
-    overflow: hidden; /* Hide overflow when collapsed */
+    /* background: rgba(255, 255, 255, 0.2); Semi-transparent white background */
+    /* backdrop-filter: blur(10px); Apply blur effect for glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Optional: border for better visibility */
+    border-radius: 10px; /* Optional: rounded corners */
+    transition: width 0.3s ease; /* Smooth transition for width change */
     z-index: 1000; /* Ensure it is above other content */
+    background: transparent;
 }
 
 .collapsed {
@@ -36,8 +39,30 @@
     margin: 10px 0;
     display: flex; /* Use flexbox for alignment */
     align-items: center; /* Center items vertically */
+    cursor: pointer; /* Change cursor to pointer */
 }
 
 .nav li svg {
     margin-right: 10px; /* Space between icon and text */
+}
+
+/* Remove underline from links */
+.navLink {
+    text-decoration: none; /* Remove underline */
+    color: var(--text-color); /* Use text color for links */
+}
+
+/* Media Queries for larger screens */
+@media (min-width: 768px) {
+    .sidebar {
+        width: 200px; /* Set width for larger screens */
+    }
+
+    .collapsed {
+        width: 50px; /* Width when collapsed */
+    }
+
+    .toggleButton {
+        display: none; /* Hide toggle button on larger screens */
+    }
 }

@@ -41,12 +41,6 @@ const ScoreBoard = ({
               className={styles.input}
             />
             <span>Total: {player.total ? player.total.toFixed(1) : 0}</span>
-            <span>
-              Rounds:{" "}
-              {player.rounds
-                .map((round) => `Round ${round.round}: ${round.score}`)
-                .join(", ")}
-            </span>
           </div>
         ))}
       </div>

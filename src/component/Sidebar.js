@@ -1,18 +1,20 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   FaHistory,
   FaInfoCircle,
   FaCog,
   FaBars,
   FaTimes,
+  FaHome,
 } from "react-icons/fa";
 import styles from "../styles/Sidebar.module.css"; // Import your CSS module
 
 const Sidebar = () => {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true);
 
   const toggleSidebar = () => {
-    setIsCollapsed(!isCollapsed);
+    setIsCollapsed((prevState) => !prevState);
   };
 
   return (
@@ -22,34 +24,50 @@ const Sidebar = () => {
       </button>
       <nav className={styles.nav}>
         <ul>
-          <li>
-            {isCollapsed ? (
-              <FaHistory />
-            ) : (
-              <>
-                <FaHistory /> History
-              </>
-            )}
+          <li onClick={toggleSidebar}>
+            <Link to="/" className={styles.navLink}>
+              {isCollapsed ? (
+                <FaHome />
+              ) : (
+                <>
+                  <FaHome /> Home
+                </>
+              )}
+            </Link>
           </li>
-          <li>
-            {isCollapsed ? (
-              <FaInfoCircle />
-            ) : (
-              <>
-                <FaInfoCircle /> About
-              </>
-            )}
+          <li onClick={toggleSidebar}>
+            <Link to="/history" className={styles.navLink}>
+              {isCollapsed ? (
+                <FaHistory />
+              ) : (
+                <>
+                  <FaHistory /> History
+                </>
+              )}
+            </Link>
           </li>
-          <li>
-            {isCollapsed ? (
-              <FaCog />
-            ) : (
-              <>
-                <FaCog /> Settings
-              </>
-            )}
+          <li onClick={toggleSidebar}>
+            <Link to="/about" className={styles.navLink}>
+              {isCollapsed ? (
+                <FaInfoCircle />
+              ) : (
+                <>
+                  <FaInfoCircle /> About
+                </>
+              )}
+            </Link>
           </li>
-          {/* Add more items as needed */}
+          <li onClick={toggleSidebar}>
+            <Link to="/settings" className={styles.navLink}>
+              {isCollapsed ? (
+                <FaCog />
+              ) : (
+                <>
+                  <FaCog /> Settings
+                </>
+              )}
+            </Link>
+          </li>
         </ul>
       </nav>
     </div>

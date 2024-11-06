@@ -13,11 +13,7 @@ const PlayerSetup = ({ players = [], handleNameEdit, startGame }) => {
           className={styles.playerInput}
         />
       ))}
-      <button
-        onClick={startGame}
-        className={styles.startButton}
-        disabled={players.some((p) => !p.name.trim())}
-      >
+      <button onClick={startGame} className={styles.startButton}>
         Start Game
       </button>
     </div>

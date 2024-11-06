@@ -14,23 +14,44 @@ const GamePage = () => {
 
   // Handle player's call
   const handleCall = (playerIndex, callValue) => {
+    if (callValue < 0) {
+      alert("Call value cannot be negative."); // Alert for negative call value
+      return;
+    }
     const updatedPlayers = [...players];
     updatedPlayers[playerIndex].call = callValue; // Store the call value for the player
     setPlayers(updatedPlayers);
+
+    // if (playerIndex === players.length - 1) {
+    //   setPlayers(updatedPlayers.map((player) => ({ ...player, call: 0 })));
+    // }
   };
 
   // Handle player's actual score
   const handleActual = (playerIndex, actualValue) => {
+    if (actualValue < 0) {
+      alert("Actual score cannot be negative."); // Alert for negative actual score
+      return;
+    }
     const updatedPlayers = [...players];
     updatedPlayers[playerIndex].actual = actualValue; // Store the actual score for the player
     setPlayers(updatedPlayers);
+
+    // if (playerIndex === players.length - 1) {
+    //   setPlayers(updatedPlayers.map((player) => ({ ...player, actual: 0 })));
+    // }
   };
 
   // Validate if the round can proceed
   const validateRound = () => {
-    return players.every(
-      (player) => player.call !== undefined && player.actual !== undefined
+    const allCallsValid = players.every(
+      (player) => player.call >= 1 && player.call <= 12 // Rule 2: Calls must be between 1 and 12
     );
+    const totalCalls = players.reduce((sum, player) => sum + player.call, 0);
+    const totalActual = players.reduce((sum, player) => sum + player.actual, 0);
+    const actualMatchesCalls = totalCalls === totalActual; // Rule 3: Actual should match total calls
+
+    return allCallsValid && actualMatchesCalls; // Combine both validations
   };
 
   // Move to the next round
@@ -56,15 +77,17 @@ const GamePage = () => {
     }
   };
 
-  // Get the winner of the game
+  // Get the winner of the game based on calls and actual scores
   const getWinner = () => {
-    return players.reduce((prev, current) =>
-      prev.total > current.total ? prev : current
-    ); // Find the player with the highest total score
+    return players.reduce((prev, current) => {
+      const prevScore = prev.call + prev.actual; // Calculate score based on calls and actual
+      const currentScore = current.call + current.actual;
+      return prevScore > currentScore ? prev : current;
+    }); // Find the player with the highest combined score
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.card}>
       <h1
         className={styles.title}
         style={{ display: "flex", justifyContent: "center" }}
@@ -79,21 +102,8 @@ const GamePage = () => {
         />
       </h1>
       <div className={styles.card}>
-        {currentRound <= 4 ? (
-          <ScoreBoard
-            players={players}
-            currentRound={currentRound}
-            handleCall={handleCall}
-            handleActual={handleActual}
-            validateRound={validateRound}
-            startNewGame={() => setCurrentRound(1)} // Reset to round 1
-            nextRound={nextRound}
-            getWinner={getWinner}
-            styles={styles}
-          />
-        ) : (
+        {currentRound < 5 ? (
           <div>
-            <h2>Results After Round 4</h2>
             <ScoreBoard
               players={players}
               currentRound={currentRound}
@@ -105,10 +115,40 @@ const GamePage = () => {
               getWinner={getWinner}
               styles={styles}
             />
-            <h3>
-              Final Winner: {getWinner().name} with{" "}
-              {getWinner().total.toFixed(1)} points
-            </h3>
+            {currentRound > 2 ? (
+              <PreviousRounds
+                styles={styles}
+                players={players}
+                currentRound={currentRound}
+              />
+            ) : (
+              ""
+            )}
+          </div>
+        ) : (
+          <div>
+            {currentRound === 4 && ( // Show results after round 4
+              <div>
+                <h2>Results After Round 4</h2>
+                <ScoreBoard
+                  players={players}
+                  currentRound={currentRound}
+                  handleCall={handleCall}
+                  handleActual={handleActual}
+                  validateRound={validateRound}
+                  startNewGame={() => setCurrentRound(1)} // Reset to round 1
+                  nextRound={nextRound}
+                  getWinner={getWinner}
+                  styles={styles}
+                />
+              </div>
+            )}
+            {currentRound === 5 && (
+              <h3>
+                Final Winner: {getWinner().name} with{" "}
+                {getWinner().total.toFixed(1)} points
+              </h3>
+            )}
             <button
               onClick={() => setCurrentRound(1)}
               className={styles.button}

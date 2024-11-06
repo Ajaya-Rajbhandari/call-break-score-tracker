@@ -1,29 +1,50 @@
-.App {
-  text-align: center;
+/* src/styles/App.css */
+:root {
+    --primary-color: #3498db; /* Blue */
+    --secondary-color: #2ecc71; /* Green */
+    --accent-color: #e74c3c; /* Red */
+    --background-color: #ecf0f1; /* Light Gray */
+    --text-color: #2c3e50; /* Dark Gray */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.sidebar {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent for glass effect */
+    border-right: 1px solid var(--primary-color); /* Border using primary color */
 }
 
-
-
-.App-link {
-  color: #61dafb;
+.sidebar .navLink {
+    color: var(--text-color); /* Text color for links */
+    text-decoration: none; /* Remove underline */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sidebar .navLink:hover {
+    color: var(--accent-color); /* Change color on hover */
+}
+
+.playerSetupContainer {
+    background-color: var(--background-color);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.startButton {
+    background-color: var(--primary-color); /* Primary color for button */
+    color: white; /* White text */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.startButton:hover {
+    background-color: var(--secondary-color); /* Change to secondary color on hover */
 }

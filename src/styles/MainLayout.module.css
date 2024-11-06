@@ -1,14 +1,24 @@
 .layout {
     display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */   
 }
 
 .content {
-    flex-grow: 1; /* Allow content to take the remaining space */
+    /* flex-grow: 1; Allow content to take the remaining space */
     padding: 20px; /* Add some padding */
-    margin-left: 200px; /* Adjust margin to account for the sidebar width */
+    margin-left: 0; /* No margin on mobile */
     transition: margin-left 0.3s; /* Smooth transition for margin change */
 }
 
-.sidebar.collapsed + .content {
-    margin-left: 50px; /* Adjust margin when sidebar is collapsed */
+/* Media Queries for larger screens */
+@media (min-width: 768px) {
+    .content {
+        margin-left: 200px; /* Adjust margin to account for the sidebar width */
+    }
+
+    .sidebar.collapsed + .content {
+        margin-left: 10px; /* Adjust margin when sidebar is collapsed */
+    }
 }

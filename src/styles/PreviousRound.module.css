@@ -1,0 +1,28 @@
+/* src/styles/NameSetupPage.module.css */
+.card {
+    background-color: #f9f9f9; /* Light background for cards */
+    border: 1px solid #ccc; /* Add a border to the card */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px;
+    margin: 20px;
+}
+
+.cardHeader {
+    position: relative; /* Position relative for absolute positioning of children */
+    text-align: center; /* Center the text */
+    margin-bottom: 20px; /* Space below the header */
+}
+.cardTitle{
+    font-size: 1.2rem;
+}
+.previousRounds{
+    font-size: 0.8rem;
+
+}
+.roundRow{
+    display: flex;
+
+}
+
+

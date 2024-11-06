@@ -1,10 +1,12 @@
 /* src/styles/PlayerSetup.module.css */
 .playerSetupContainer {
+    /* background-color: var(--background-color); */
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 20px;
-    border-radius: 20px;
+    border-radius: 5px;
+    /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
 }
 
 .playerInput {
@@ -17,15 +19,14 @@
 }
 
 .startButton {
-    background-color: #4CAF50; /* Green background */
-    color: white; /* White text */
+    background-color: var(--primary-color); /* Green background */
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+
+}
+.startButton:hover{
+    background-color: var(--secondary-color);
 }
 
-.startButton:hover {
-    background-color: #45a049; /* Darker green on hover */
-}

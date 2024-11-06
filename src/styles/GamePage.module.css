@@ -1,6 +1,12 @@
 /* src/styles/GamePage.css */
 .container {
+    width: 100%;
     padding: 20px;
+    background-color: #f9f9f9; /* Light background for cards */
+    border: 1px solid #ccc; /* Add a border to the card */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin: 20px;
 }
 
 .title {
@@ -11,6 +17,7 @@
 
 .card {
     background-color: #f9f9f9; /* Light background for cards */
+    border: 1px solid #ccc; /* Add a border to the card */
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     padding: 20px;
